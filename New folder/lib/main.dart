@@ -18,10 +18,10 @@ class FirstPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: PreferredSize(
-            preferredSize: const Size.fromHeight(50.0), // here the desired height
+            preferredSize: const Size.fromHeight(40.0), // here the desired height
             child: AppBar(
               title: const Text(
-                  'Book',
+                  'Book List',
                   style: TextStyle(fontSize: 25,fontWeight: FontWeight.w100)
               ),
               centerTitle: true,
