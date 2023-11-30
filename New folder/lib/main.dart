@@ -21,7 +21,7 @@ class FirstPage extends StatelessWidget {
             preferredSize: const Size.fromHeight(50.0), // here the desired height
             child: AppBar(
               title: const Text(
-                  'Book List',
+                  'Book',
                   style: TextStyle(fontSize: 25,fontWeight: FontWeight.w100)
               ),
               centerTitle: true,
