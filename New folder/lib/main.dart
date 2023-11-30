@@ -18,11 +18,11 @@ class FirstPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: PreferredSize(
-            preferredSize: const Size.fromHeight(40.0), // here the desired height
+            preferredSize: const Size.fromHeight(50.0), // here the desired height
             child: AppBar(
               title: const Text(
                   'Book List',
-                  style: TextStyle(fontSize: 25,fontWeight: FontWeight.w100)
+                  style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold, color: Colors.white70)
               ),
               centerTitle: true,
               backgroundColor: const Color(0xFF41584C),
@@ -46,8 +46,8 @@ class FirstPage extends StatelessWidget {
               BookCard('The Da Vinci Code: A Novel ', 'Dan Brown', '4.7', 'https://i.ibb.co/qR5XSCz/dvc.jpg','400 Bdt'),
               BookCard('Diary Of a Wimpy Kid', 'Jeff Kinney', '4.4', 'https://i.ibb.co/cTJ30Sp/dwk.jpg', '300 Bdt'),
               BookCard('Harry Potter and the Philosophers Stone', 'J. K. Rowling', '4.6', 'https://i.ibb.co/nw98B2R/2.jpg','450 Bdt'),
-              BookCard('The Ballad of Songbirds and Snakes', 'Suzanne Collins', '3.9', 'https://i.ibb.co/3rDZT2P/download.jpg','500 Bdt'),
-              BookCard('The Hunger Games', 'Suzanne Collins', '4.5', 'https://i.ibb.co/MS2fRvn/download-1.jpg','350 Bdt'),
+              //BookCard('The Ballad of Songbirds and Snakes', 'Suzanne Collins', '3.9', 'https://i.ibb.co/3rDZT2P/download.jpg','500 Bdt'),
+              //BookCard('The Hunger Games', 'Suzanne Collins', '4.5', 'https://i.ibb.co/MS2fRvn/download-1.jpg','350 Bdt'),
             ],
           ),
         )
@@ -90,7 +90,8 @@ class BookCard extends StatelessWidget {
 
                   leading: Image.network(urlImage),
                   title: Text(bookName,
-                      style: const TextStyle(fontSize: 15,fontWeight: FontWeight.bold)
+                      style: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold)
+
                   ),
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -113,8 +114,8 @@ class BookCard extends StatelessWidget {
                       ),
                     );
                   },
-                  icon: const Icon(Icons.add_circle_outline),
-                  label: const Text('Buy Now'),
+                  icon: const Icon(Icons.add_circle_outline, color: Colors.white),
+                  label: const Text('Buy Now', style: TextStyle(color: Colors.white)),
                 ),
                 const SizedBox(height: 6),
 
@@ -143,7 +144,7 @@ class BuyNowPage extends StatelessWidget {
         child: AppBar(
           title: const Text(
               'Buy Now',
-              style: TextStyle(fontSize: 20,fontWeight: FontWeight.w100)
+              style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold, color: Colors.white70)
           ),
           backgroundColor: const Color(0xFF41584C),
           actions: [
@@ -161,8 +162,8 @@ class BuyNowPage extends StatelessWidget {
           borderRadius: BorderRadius.circular(30),
 
           child: Container(
-              height: 450,
-              width: 450,
+              height: 530,
+              width: 300,
               //color: const Color(0xFF5D7E65),
               decoration: const BoxDecoration(
                   gradient: LinearGradient(
@@ -184,7 +185,7 @@ class BuyNowPage extends StatelessWidget {
                   child: Column(
                     //crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 10),
                       Text(bookName,
                           style: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
                       const SizedBox(height: 10),
@@ -196,9 +197,10 @@ class BuyNowPage extends StatelessWidget {
                           style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold)),
                       Text('Rating: $rating',
                           style: const TextStyle(fontSize: 15,fontWeight: FontWeight.bold)),
+                      const SizedBox(height: 4),
                       Text('Price: $price',
                           style: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
-                      const SizedBox(height: 15),
+                      const SizedBox(height: 10),
 
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -210,7 +212,8 @@ class BuyNowPage extends StatelessWidget {
                             onPressed: () {
                               Navigator.pop(context);
                             },
-                            child: const Text('Go Back'),
+                            child: const Text('Go Back',
+                                style: TextStyle(color: Colors.white70)),
                           ),
                           const SizedBox(width: 20),
                           ElevatedButton(
@@ -220,11 +223,12 @@ class BuyNowPage extends StatelessWidget {
                             onPressed: (){
 
                             },
-                            child: const Text('Add to Cart'),
+                            child: const Text('Add to Cart',
+                                style: TextStyle(color: Colors.white70)),
                           )
                         ],
                       ),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: 5),
                       DropdownButton<String>(
                         items: ['View Cart', 'Saved Items', 'Past Orders']
                             .map((String value) => DropdownMenuItem<String>(
